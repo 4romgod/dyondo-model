@@ -1,0 +1,9 @@
+---
+swagger: "2.0"
+info:
+    $ref: "info/index.yaml"
+basePath: "/api"
+paths:
+    $ref: "paths/index.yaml"
+definitions:
+    $ref: "definitions/index.yaml"

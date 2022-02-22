@@ -4,8 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "clean": "rm -rf dist coverage build node_modules",
+    "build": "npm run merge && npm run validate",
+    "merge": "(mkdir -p build && cd build && mkdir -p swagger)  && swagger-merger -i configuration/swagger/dyondo.yaml -o build/swagger/dyondo.api.yaml --debug",
+    "validate": "swagger-cli validate build/swagger/dyondo.api.yaml",
+    "release": "npm run build"  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@apidevtools/swagger-cli": "^4.0.4",
+    "swagger-merger": "^1.5.4"
+  }
 }

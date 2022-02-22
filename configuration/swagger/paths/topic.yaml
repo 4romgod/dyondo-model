@@ -1,0 +1,45 @@
+get:
+  summary: "Get A Topic by the slug"
+  description: "Get A Topic by the slug"
+  tags:
+    - Dyondo
+  operationId: "GetRetrieveTopic"
+  produces:
+    - "application/xml"
+    - "application/json"
+  parameters:
+    - in: "path"
+      name: "slug"
+      description: "Slug of the Topic to be returned"
+      required: true
+      type: "string"
+  responses:
+    "200":
+      description: "success"
+      schema:
+        $ref: "#/definitions/Topic"
+    "400":
+      description: "Bad Request"
+    "404":
+      description: "Topic Not Found"
+delete:
+  summary: "Delete A Topic by the slug"
+  description: "Delete A Topic by the slug"
+  tags:
+    - Dyondo
+  operationId: "DeleteRemoveTopic"
+  produces:
+    - "application/xml"
+    - "application/json"
+  parameters:
+    - name: "slug"
+      in: "path"
+      required: true
+      type: "string"
+  responses:
+    "200":
+      description: "Success"
+    "400":
+      description: "Bad Request"
+    "404":
+      description: "Topic Not Fount"

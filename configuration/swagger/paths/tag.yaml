@@ -1,0 +1,72 @@
+get:
+  summary: "Get A Tag by the slug"
+  description: "Get A Tag by the slug"
+  tags:
+    - Dyondo
+  operationId: "GetRetrieveTag"
+  produces:
+    - "application/xml"
+    - "application/json"
+  parameters:
+    - in: "path"
+      name: "slug"
+      description: "Slug of the Tag to be returned"
+      required: true
+      type: "string"
+  responses:
+    "200":
+      description: "success"
+      schema:
+        $ref: "#/definitions/Tag"
+    "400":
+      description: "Bad Request"
+    "404":
+      description: "Tag Not Found"
+put:
+  summary: "Update A Tag by the slug"
+  description: "Update A Tag by the slug"
+  tags:
+    - Dyondo
+  operationId: "PutUpdateTag"
+  produces:
+    - "application/xml"
+    - "application/json"
+  parameters:
+    - in: "path"
+      name: "slug"
+      required: true
+      type: "string"
+    - in: "body"
+      name: "body"
+      description: "The Tag object that needs to be updated to the DB"
+      required: true
+      schema:
+        $ref: "#/definitions/Tag"
+  responses:
+    "200":
+      description: "Success"
+    "400":
+      description: "Bad Request"
+    "404":
+      description: "Topic Not Fount"
+delete:
+  summary: "Delete A Tag by the slug"
+  description: "Delete A Tag by the slug"
+  tags:
+    - Dyondo
+  operationId: "DeleteRemoveTag"
+  produces:
+    - "application/xml"
+    - "application/json"
+  parameters:
+    - name: "slug"
+      in: "path"
+      required: true
+      type: "string"
+  responses:
+    "200":
+      description: "Success"
+    "400":
+      description: "Bad Request"
+    "404":
+      description: "Topic Not Fount"

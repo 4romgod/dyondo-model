@@ -1,0 +1,12 @@
+/topics:
+  $ref: topics.yaml
+/topics/{slug}:
+  $ref: topic.yaml
+/tags:
+  $ref: tags.yaml
+/tags/{slug}:
+  $ref: tag.yaml
+/blogs:
+  $ref: blogs.yaml
+/blog/{slug}:
+  $ref: blog.yaml
