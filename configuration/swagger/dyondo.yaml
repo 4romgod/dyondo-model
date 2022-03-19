@@ -1,9 +1,17 @@
 ---
-swagger: "2.0"
+openapi: '3.0.0'
 info:
-    $ref: "info/index.yaml"
-basePath: "/api"
+  description: Backend API for Dyondo muliti-user blogging platform
+  version: 1.0.0
+  title: Dyondo API
 paths:
     $ref: "paths/index.yaml"
-definitions:
-    $ref: "definitions/index.yaml"
+components:
+    schemas:
+        $ref: "definitions/index.yaml"
+    securitySchemes:
+      BearerAuth:
+        type: http
+        description: JWT Authorization header using the Bearer scheme
+        scheme: bearer
+        bearerFormat: JWT

@@ -4,19 +4,13 @@ post:
   tags:
     - Dyondo
   operationId: "PostCreateTopic"
-  consumes:
-    - "application/json"
-    - "application/xml"
-  produces:
-    - "application/xml"
-    - "application/json"
-  parameters:
-    - in: "body"
-      name: "body"
-      description: "The Topic object that needs to be added to the DB"
-      required: true
-      schema:
-        $ref: "#/definitions/Topic"
+  requestBody:
+    required: true
+    description: "The Topic object that needs to be added to the database"
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/Topic"
   responses:
     "200":
       description: "Success"
@@ -28,12 +22,6 @@ get:
   tags:
     - Dyondo
   operationId: "GetRetrieveTopics"
-  consumes:
-    - "application/json"
-    - "application/xml"
-  produces:
-    - "application/xml"
-    - "application/json"
   responses:
     "200":
       description: "Success"

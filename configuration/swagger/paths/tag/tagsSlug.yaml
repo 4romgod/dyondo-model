@@ -4,20 +4,20 @@ get:
   tags:
     - Dyondo
   operationId: "GetRetrieveTag"
-  produces:
-    - "application/xml"
-    - "application/json"
   parameters:
     - in: "path"
       name: "slug"
       description: "Slug of the Tag to be returned"
       required: true
-      type: "string"
+      schema:
+        type: "string"
   responses:
     "200":
       description: "success"
-      schema:
-        $ref: "#/definitions/Tag"
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Tag"
     "400":
       description: "Bad Request"
     "404":
@@ -28,20 +28,19 @@ put:
   tags:
     - Dyondo
   operationId: "PutUpdateTag"
-  produces:
-    - "application/xml"
-    - "application/json"
+  requestBody:
+    required: true
+    description: "The Tag object that needs to be updated to the database"
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/Tag"
   parameters:
     - in: "path"
       name: "slug"
       required: true
-      type: "string"
-    - in: "body"
-      name: "body"
-      description: "The Tag object that needs to be updated to the DB"
-      required: true
       schema:
-        $ref: "#/definitions/Tag"
+        type: "string"
   responses:
     "200":
       description: "Success"
@@ -55,14 +54,12 @@ delete:
   tags:
     - Dyondo
   operationId: "DeleteRemoveTag"
-  produces:
-    - "application/xml"
-    - "application/json"
   parameters:
     - name: "slug"
       in: "path"
       required: true
-      type: "string"
+      schema:
+        type: "string"
   responses:
     "200":
       description: "Success"
