@@ -28,4 +28,4 @@ Blog:
     title:
       type: string
     body:
-      string
+      type: string

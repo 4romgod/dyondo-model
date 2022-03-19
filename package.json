@@ -1,15 +1,14 @@
 {
   "name": "@dyondo/model",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Openapi3 Model for Backend API for Dyondo muliti-user blogging platform",
   "scripts": {
     "clean": "rm -rf dist coverage build node_modules",
     "build": "npm run merge && npm run validate",
     "merge": "(mkdir -p build && cd build && mkdir -p swagger)  && swagger-merger -i configuration/swagger/dyondo.yaml -o build/swagger/dyondo.api.yaml --debug",
     "validate": "swagger-cli validate build/swagger/dyondo.api.yaml",
     "release": "npm run build"  },
-  "author": "",
+  "author": "4romgod",
   "license": "ISC",
   "dependencies": {
     "@apidevtools/swagger-cli": "^4.0.4",
