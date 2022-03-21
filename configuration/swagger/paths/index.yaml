@@ -13,7 +13,7 @@
 
 /tags:
   $ref: tag/tags.yaml
-/tag/{slug}:
+/tags/{slug}:
   $ref: tag/tagsSlug.yaml
 
 /topics:
